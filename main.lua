@@ -1,11 +1,11 @@
 local params = ...
 
 local password = params.password
--- 
+
 local url = params.hub
 
 local headers = {
-    ["Authorization"] = params.token -- Include the token in the request header
+    ["Authorization"] = params.token
 }
 
 local response = game:GetService("HttpService"):RequestAsync({
@@ -22,5 +22,5 @@ if response.StatusCode == 200 then
         print("Error loading script:", err)
     end
 else
-    print("Failed to fetch script. Status code:", response.StatusCode)
+    print("Failed to fetch script. Status code:", response.StatusCode,params)
 end
