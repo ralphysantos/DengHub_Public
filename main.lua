@@ -16,7 +16,7 @@ local response = game:GetService("HttpService"):RequestAsync({
 
 if response.StatusCode == 200 then
     print(response)
-    local func, err = loadstring(game:HttpGet(response.Body)
+    local func, err = loadstring(response.Body)
     if func then
         func()
     else
@@ -26,3 +26,4 @@ else
     print("Failed to fetch script. Status code:", response.StatusCode,params)
 
 end
+
